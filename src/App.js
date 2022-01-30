@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import axios from 'axios';
+
+import { Route } from "react-router-dom";
+
+import { Home, Login, Registration } from './pages';
+
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [users, setUsers] = React.useState([]);
+	const [isAuth, setIsAuth] = React.useState(false);
+
+	React.useEffect(() => {
+		try {
+			async function fetchData() {
+				const users = await axios.get("/users");
+
+				setUsers(users.data);
+			}
+			fetchData();
+		} catch (error) {
+			alert(error);
+		}
+	}, []);
+
+	console.log(users);
+
+	return (
+		<div className="App">
+			<Route path="/" exact>
+				<Home isAuth={isAuth} />
+			</Route>
+			<Route path="/login" exact>
+				<Login isAuth={isAuth} setIsAuth={setIsAuth} users={users} />
+			</Route>
+			<Route path="/registration" exact>
+				<Registration />
+			</Route>
+		</div>
+	);
 }
 
 export default App;
