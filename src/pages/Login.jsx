@@ -4,21 +4,26 @@ import { Link } from "react-router-dom";
 
 import Form from "../components/Form";
 
+import { validate } from "../utils/validate";
+
 function Login({ isAuth, setIsAuth, users }) {
 	function login(email, pass) {
-		let result = "Пользователь не найден";
+		if (validate(email, pass)) {
+			let result = "User not found";
 
-		users.forEach((obj) => {
-			if (email === obj.email) {
-				if (pass === obj.pass) {
-					setIsAuth(true);
-				} else {
-					result = "Не правильный пароль";
+			users.forEach((obj) => {
+				if (email === obj.email) {
+					if (pass === obj.pass) {
+						result = "Login completed!";
+						setIsAuth(true);
+					} else {
+						result = "Incorrect password!";
+					}
 				}
-			}
-		});
+			});
 
-		alert(result);
+			alert(result);
+		}
 	}
 
 	return (

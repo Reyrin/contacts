@@ -35,7 +35,7 @@ function App() {
 				<Login isAuth={isAuth} setIsAuth={setIsAuth} users={users} />
 			</Route>
 			<Route path="/registration" exact>
-				<Registration />
+				<Registration users={users} />
 			</Route>
 		</div>
 	);

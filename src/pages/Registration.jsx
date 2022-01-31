@@ -4,15 +4,24 @@ import { Link } from "react-router-dom";
 
 import Form from "../components/Form";
 
-function Registration() {
+import { validate } from '../utils/validate';
+
+function Registration({ users }) {
 	async function postData(email, pass) {
-		try {
-			await axios.post("/users", { email, pass });
-			alert("Вы успешно зарегестрировались!");
-		} catch (error) {
-			alert(error);
+		if (users.find(obj => obj.email === email)) {
+			alert('Пользователь с таким email уже существует');
+		} else if (validate(email, pass)) {
+			try {
+				await axios.post("/users", { email, pass });
+
+				alert("Вы успешно зарегестрировались!");
+			} catch (error) {
+				alert(error);
+			}
 		}
 	}
+
+
 	return (
 		<div className="Sign Up">
 			<Form title="Sign Up" handleClick={postData} />
