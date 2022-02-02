@@ -1,0 +1,16 @@
+a {
+    color: red;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    padding: 0 20px;
+}
+
+header p {
+    font-size: 30px;
+    color: #fff;
+}

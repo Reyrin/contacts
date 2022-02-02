@@ -2,7 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import Form from "../components/Form";
+import { Form } from "../components";
 
 import { validate } from "../utils/validate";
 
@@ -15,7 +15,7 @@ function Login({ isAuth, setIsAuth, users }) {
 				if (email === obj.email) {
 					if (pass === obj.pass) {
 						result = "Login completed!";
-						setIsAuth(true);
+						setIsAuth(obj.email.split('@')[0]);
 					} else {
 						result = "Incorrect password!";
 					}
