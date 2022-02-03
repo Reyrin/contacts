@@ -9,9 +9,11 @@
 2. Redux Toolkit
 3. Redux Persist
 4. React Tostify
-5. Json Server
-6. Axios
-7. SCSS
+5. React Router Dom
+6. Json Server
+7. Auth
+8. Axios
+9. SCSS
 
 ## Installation
 ```
