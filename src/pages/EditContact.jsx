@@ -53,34 +53,36 @@ const EditContact = () => {
 		<div className="edit-contact">
 			{currentContact ? (
 				<>
-					<h1>Edit Contact {id}</h1>
+					<h1>Edit Contact {+id + 1}</h1>
 
-					<form onSubmit={handleSubmit}>
+					<form className="form-contact" onSubmit={handleSubmit}>
 						<input
-							className="form-control"
 							type="text"
-							placeholder="Full name"
+							placeholder="Name"
 							value={name}
 							onChange={(e) => setName(e.target.value)}
 						/>
 						<input
-							className="form-control"
 							type="number"
 							placeholder="Phone"
 							value={phone}
 							onChange={(e) => setPhone(e.target.value)}
 						/>
-						<input
-							className="btn btn-block btn-dark"
-							type="submit"
-							value="Edit Contact"
-						/>
-						<button
-							type="button"
-							onClick={() => history.push("/")}
-						>
-							cancel
-						</button>
+						<div className="form-contact__btn">
+							<button
+								className="form-contact__submit"
+								type="submit"
+							>
+								Edit Contact
+							</button>
+							<button
+								className="form-contact__cancel"
+								type="button"
+								onClick={() => history.push("/")}
+							>
+								Cancel
+							</button>
+						</div>
 					</form>
 				</>
 			) : (

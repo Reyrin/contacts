@@ -4,46 +4,6 @@
       "id": 1,
       "email": "admin@admin.com",
       "pass": "Admin123"
-    },
-    {
-      "email": "anatoly@vk.com",
-      "pass": "Anat12345",
-      "id": 2
-    },
-    {
-      "email": "katya@mail.ru",
-      "pass": "Qwerty123",
-      "id": 3
-    },
-    {
-      "email": "masha@gmail.com",
-      "pass": "Qwerty12",
-      "id": 4
-    },
-    {
-      "email": "masha1@gmail.com",
-      "pass": "Qwerty123",
-      "id": 5
-    },
-    {
-      "email": "admin23@admin.com",
-      "pass": "Admin123",
-      "id": 6
-    },
-    {
-      "email": "newUser@mail.com",
-      "pass": "Qwerty123",
-      "id": 7
-    },
-    {
-      "email": "koala@gmail.com",
-      "pass": "Qwertty123",
-      "id": 8
-    },
-    {
-      "email": "newnew@mail.ru",
-      "pass": "Qwerty123",
-      "id": 9
     }
   ]
 }

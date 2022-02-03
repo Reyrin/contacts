@@ -11,14 +11,16 @@ function Form({ title, handleClick }) {
 				value={email}
 				onChange={(e) => setEmail(e.target.value)}
 				placeholder="Email"
+				className="form__email"
 			/>
 			<input
 				type="password"
 				value={pass}
 				onChange={(e) => setPass(e.target.value)}
 				placeholder="Password"
+				className="form__pass"
 			/>
-			<button onClick={() => handleClick(email, pass)}>{title}</button>
+			<button className="form__submit" onClick={() => handleClick(email, pass)}>{title}</button>
 		</div>
 	);
 }

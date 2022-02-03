@@ -32,14 +32,15 @@ function Login() {
 	}
 
 	return (
-		<div className="Login">
+		<div className="login">
 			{isAuth ? (
 				<Redirect to="/" />
 			) : (
 				<div>
-					<Form title="Log In" handleClick={login} />
-					<p>
-						Or <Link to="/register">register</Link>
+					<h1>Login</h1>
+					<Form title="Log in" handleClick={login} />
+					<p className="or">
+						or <Link to="/register">register</Link>
 					</p>
 				</div>
 			)}

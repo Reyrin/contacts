@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Home, AddContact, EditContact, Login, Register } from "./pages";
 import { Header } from "./components";
 import { getUsers } from "./store/actions";
-import "./App.css";
+import "./App.scss";
 
 function App() {
 	const dispatch = useDispatch();

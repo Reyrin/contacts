@@ -24,10 +24,11 @@ function Register() {
 	}
 
 	return (
-		<div className="Sign Up">
+		<div className="signup">
+			<h1>Registration</h1>
 			<Form title="Sign Up" handleClick={postData} />
 			<p>
-				Or <Link to="/login">login</Link>
+				or <Link to="/login">login</Link>
 			</p>
 		</div>
 	);

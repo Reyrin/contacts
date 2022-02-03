@@ -10,19 +10,20 @@ const Header = () => {
 
 	return (
 		<header className="main-header">
-			<p className="logo">📝 React Contacts</p>
-			<div className="">
+			<p className="main-header__logo">📝 React Contacts</p>
+			<div className="main-header__right">
 				{isAuth ? (
-					<div>
-						{isAuth} or{" "}
+					<div className="user">
+						User: <span>{isAuth}</span> or {" "}
+						
 						<button onClick={() => dispatch(logOut())}>
 							Log Out
 						</button>
 					</div>
 				) : (
-					<div>
-						<Link to="/login">Log In</Link> or{" "}
-						<Link to="/register">Sign In</Link>
+					<div className="links">
+						<Link to="/login">Log in</Link> or{" "}
+						<Link to="/register">Sign in</Link>
 					</div>
 				)}
 			</div>

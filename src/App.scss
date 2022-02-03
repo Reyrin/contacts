@@ -1,0 +1,287 @@
+body {
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue,
+		Arial, Noto Sans, Liberation Sans, sans-serif;
+	background-color: #efefef;
+	padding-top: 200px;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+.container {
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.empty {
+    text-align: center;
+    font-size: 50px;
+}
+
+a {
+	color: red;
+}
+
+.main-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	padding: 25px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	background-color: #1374e9;
+
+	&__logo {
+		font-size: 30px;
+		margin: 0;
+		color: #fff;
+	}
+}
+
+.links {
+	font-size: 20px;
+	color: #fff;
+
+	a {
+		padding: 5px;
+		border: 1px solid #fff;
+		border-radius: 3px;
+		color: #fff;
+		text-decoration: none;
+		transition: 0.3s ease-in-out;
+
+        &:hover {
+            background-color: #00CA9A;
+        }
+	}
+}
+
+.add-btn {
+    margin: 20px auto;
+    text-align: center;
+    width: 150px;
+    display: block;
+    padding: 10px;
+    font-weight: bold;
+    background-color: #00CA9A;
+    border-radius: 3px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        background-color: #00bf91;
+    }
+
+    &:active {
+        transform: translateY(4px);
+    }
+}
+
+.rest-btn {
+    display: block;
+    cursor: pointer;
+    margin-left: auto;
+    border: none;
+    background-color: transparent;
+    font-size: 30px;
+    margin-bottom: 10px;
+    transition: transform .2s ease-in-out;
+
+    &:hover {
+        transform: translateY(-3px);
+    }
+}
+
+.user {
+	font-size: 20px;
+	color: #fff;
+
+    span {
+        color: #2eff35;
+    }
+
+	button {
+		padding: 5px;
+		border: 1px solid #fff;
+        background-color: transparent;
+		border-radius: 3px;
+		color: #fff;
+		text-decoration: none;
+		transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #00bf91;
+        }
+
+        &:active {
+            transform: translateY(4px);
+        }
+	}
+}
+
+.login,
+.signup {
+    text-align: center;
+
+    a {
+        color: #000;
+        transition: .3s ease-in-out;
+
+        &:hover {
+            color: #00CA9A;
+        }
+    }
+}
+
+.form,
+.form-contact {
+    margin: 0 auto;
+	width: 500px;
+	padding: 30px;
+
+	display: flex;
+	flex-direction: column;
+    
+    background-color: #fff;
+    border-radius: 5px;
+
+    input {
+        padding: 12px;
+	    margin-bottom: 35px;
+    }
+
+    button {
+        margin: 15px auto;
+        padding: 10px;
+        width: 130px;
+
+        font-size: 18px;
+        background-color: #00CA9A;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+
+        &:hover {
+            background-color: #00bf91;
+        }
+
+        &:active {
+            transform: translateY(4px);
+        }
+    }
+}
+
+.form-contact {
+    &__btn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__cancel {
+        background-color: #F4B300 !important;
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.header-contacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    background-color: #303030;
+    text-transform: uppercase;
+    color: #fff;
+
+    &__id {
+        width: 10%;
+        padding: 10px;
+        border-right: 1px solid #fff;
+    }
+
+    &__name,
+    &__phone,
+    &__actions {
+        width: 30%;
+        padding: 10px;
+        border-right: 1px solid #fff;
+    }
+
+    &__actions {
+        border-right: none;
+    }
+}
+
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    background-color: #fff;
+    border-bottom: 1px solid #303030;
+
+    &__id {
+        width: 10%;
+        border-right: 1px solid #303030;
+    }
+
+    &__name,
+    &__phone {
+        width: 30%;
+        border-right: 1px solid #303030;
+    }
+
+    &__edit,
+    &__delete {
+        max-width: 15%;
+        margin: 15px auto;
+        padding: 5px;
+        width: 100px;
+        color: #fff;
+        text-decoration: none;
+
+        font-size: 18px;
+        background-color: #00CA9A;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+
+        &:active {
+            transform: translateY(4px);
+        }
+    }
+
+    &__edit {
+        background-color: #F4B300;
+    }
+
+    &__delete {
+        background-color: #fd3e3e;
+    }
+}

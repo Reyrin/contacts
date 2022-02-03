@@ -1,32 +1,45 @@
 import React from "react";
 import { Redirect, Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
-import { deleteContact } from "../store/contactSlice";
+import { Contact } from "../components";
+import { resetContact } from "../store/contactSlice";
 
 function Home() {
 	const dispatch = useDispatch();
+
 	const contacts = useSelector((state) => state.contact.contacts);
 	const isAuth = useSelector((state) => state.auth.isAuth);
 
-	const deliteCon = (id) => {
-		dispatch(deleteContact(id));
-	};
-
 	return isAuth ? (
 		<div className="Home">
-			<h1>Контакты</h1>
+			<h1>Contacts</h1>
+			<Link className="add-btn" to={`/add`}>
+				Add Contact
+			</Link>
 
-			{contacts.map((cont) => (
-				<div style={{ border: "2px solid red" }} key={cont.id}>
-					<p>{cont.name}</p>
-					<p>{cont.phone}</p>
-					<Link to={`/edit/${cont.id}`}>Edit</Link>
-					<button onClick={() => deliteCon(cont.id)}>delete</button>
-				</div>
-			))}
+			{contacts.length ? (
+				<>
+					<button
+						className="rest-btn"
+						onClick={() => dispatch(resetContact())}
+					>
+						❌
+					</button>
 
-			<Link to={`/add`}>Add contact</Link>
+					<div className="header-contacts">
+						<div className="header-contacts__id">Id</div>
+						<div className="header-contacts__name">Name</div>
+						<div className="header-contacts__phone">Phone</div>
+						<div className="header-contacts__actions">Actions</div>
+					</div>
+					{contacts.map((cont) => (
+						<Contact key={cont.id} {...cont} />
+					))}
+				</>
+			) : (
+				<h2 className="empty">You need to add contacts!</h2>
+			)}
 		</div>
 	) : (
 		<Redirect to="/login" />
