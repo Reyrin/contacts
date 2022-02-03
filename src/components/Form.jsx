@@ -3,8 +3,9 @@ import React from "react";
 function Form({ title, handleClick }) {
 	const [email, setEmail] = React.useState("");
 	const [pass, setPass] = React.useState("");
+
 	return (
-		<div>
+		<div className="form">
 			<input
 				type="email"
 				value={email}
@@ -17,9 +18,7 @@ function Form({ title, handleClick }) {
 				onChange={(e) => setPass(e.target.value)}
 				placeholder="Password"
 			/>
-			<button onClick={() => handleClick(email, pass)}>
-				{title}
-			</button>
+			<button onClick={() => handleClick(email, pass)}>{title}</button>
 		</div>
 	);
 }

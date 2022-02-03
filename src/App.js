@@ -1,56 +1,50 @@
 import React from "react";
-import axios from 'axios';
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { Home, AddContact, EditContact, Login, Registration } from './pages';
-
+import { Home, AddContact, EditContact, Login, Register } from "./pages";
+import { Header } from "./components";
+import { getUsers } from "./store/actions";
 import "./App.css";
 
 function App() {
-	const [users, setUsers] = React.useState([]);
-	const [isAuth, setIsAuth] = React.useState(true);
+	const dispatch = useDispatch();
+	const users = useSelector((state) => state.auth.users);
 
 	React.useEffect(() => {
-		try {
-			async function fetchData() {
-				const users = await axios.get("/users");
-
-				setUsers(users.data);
-			}
-			fetchData();
-		} catch (error) {
-			alert(error);
-		}
+		dispatch(getUsers());
 	}, []);
 
 	console.log(users);
 
 	return (
 		<div className="App">
-			<ToastContainer />
-			<header>
-				<p>Contacts App</p>
-				<p>{<Link to="/login">Log In</Link> && isAuth} </p>
-			</header>
+			<ToastContainer position="top-center" />
 
-			<Route path="/" exact>
-				<Home isAuth={isAuth} />
-			</Route>
-			<Route path="/add" exact>
-				<AddContact />
-			</Route>
-			<Route path="/edit/:id" exact>
-				<EditContact />
-			</Route>
+			<Header />
+			<div className="container">
+				<Route path="/" exact>
+					<Home />
+				</Route>
 
-			<Route path="/login" exact>
-				<Login isAuth={isAuth} setIsAuth={setIsAuth} users={users} />
-			</Route>
-			<Route path="/registration" exact>
-				<Registration users={users} />
-			</Route>
+				<Route path="/add" exact>
+					<AddContact />
+				</Route>
+
+				<Route path="/edit/:id" exact>
+					<EditContact />
+				</Route>
+
+				<Route path="/login" exact>
+					<Login />
+				</Route>
+
+				<Route path="/register" exact>
+					<Register />
+				</Route>
+			</div>
 		</div>
 	);
 }

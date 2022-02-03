@@ -1,66 +1,79 @@
 import React from "react";
-import { useHistory } from "react-router";
-import { useDispatch, useSelector } from 'react-redux';
+import { Redirect, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 
-import { addContact } from '../store/contactSlice';
-
+import { addContact } from "../store/contactSlice";
 
 const AddContact = () => {
 	const dispatch = useDispatch();
 	const history = useHistory();
 
+	const isAuth = useSelector((state) => state.auth.isAuth);
 	const contacts = useSelector(state => state.contact.contacts);
 
 	const [name, setName] = React.useState("");
 	const [phone, setPhone] = React.useState("");
 
-    const handleSubmit = (e) => {
+	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		const data = {
-			id: contacts.length > 0 ? contacts[contacts.length - 1].id + 1 : 0,
-			name,
-			phone,
+		const checkContactPhoneExists = contacts.filter((contact) =>
+			contact.phone === phone ? contact : null
+		);
+
+		if (checkContactPhoneExists.length > 0) {
+			return toast.error("This phone number already exists!");
 		}
 
-		dispatch(addContact(data))
-		toast.warning("Please fill in all fields!!", {position: "top-center"});
-		history.push("/");
-	  };
+		if (!name || !phone) {
+			return toast.warning("Please fill in all fields!");
+		}
 
-	return (
+		const data = {
+			name,
+			phone,
+		};
+
+		dispatch(addContact(data));
+		toast.success("Contact added successfully!");
+		history.push("/");
+	};
+
+	return isAuth ? (
 		<div className="add-contact">
 			<h1>Add Contact</h1>
-
+	
 			<form onSubmit={handleSubmit}>
-				<div className="form-group">
-					<input
-						className="form-control"
-						type="text"
-						placeholder="Full name"
-						value={name}
-						onChange={(e) => setName(e.target.value)}
-					/>
-				</div>
-				<div className="form-group">
-					<input
-						className="form-control"
-						type="number"
-						placeholder="Phone"
-						value={phone}
-						onChange={(e) => setPhone(e.target.value)}
-					/>
-				</div>
-				<div className="form-group">
-					<input
-						className="btn btn-block btn-dark"
-						type="submit"
-						value="Add Contact"
-					/>
-				</div>
+				<input
+					className="form-control"
+					type="text"
+					placeholder="Full name"
+					value={name}
+					onChange={(e) => setName(e.target.value)}
+				/>
+				<input
+					className="form-control"
+					type="number"
+					placeholder="Phone"
+					value={phone}
+					onChange={(e) => setPhone(e.target.value)}
+				/>
+				<input
+					className="btn btn-block btn-dark"
+					type="submit"
+					value="Add Contact"
+				/>
+				<button
+					type="button"
+					onClick={() => history.push("/")}
+				>
+					cancel
+				</button>
 			</form>
 		</div>
+	) : (
+		<Redirect to="/login" />
 	);
 };
 

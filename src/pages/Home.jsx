@@ -1,16 +1,17 @@
 import React from "react";
 import { Redirect, Link } from "react-router-dom";
-
 import { useDispatch, useSelector } from "react-redux";
+
 import { deleteContact } from "../store/contactSlice";
 
-function Home({ isAuth }) {
+function Home() {
 	const dispatch = useDispatch();
 	const contacts = useSelector((state) => state.contact.contacts);
+	const isAuth = useSelector((state) => state.auth.isAuth);
 
 	const deliteCon = (id) => {
-		dispatch(deleteContact(id))
-	}
+		dispatch(deleteContact(id));
+	};
 
 	return isAuth ? (
 		<div className="Home">
@@ -19,11 +20,9 @@ function Home({ isAuth }) {
 			{contacts.map((cont) => (
 				<div style={{ border: "2px solid red" }} key={cont.id}>
 					<p>{cont.name}</p>
-					<p>{cont.number}</p>
+					<p>{cont.phone}</p>
 					<Link to={`/edit/${cont.id}`}>Edit</Link>
-					<button onClick={() => deliteCon(cont.id)}>
-						delite
-					</button>
+					<button onClick={() => deliteCon(cont.id)}>delete</button>
 				</div>
 			))}
 

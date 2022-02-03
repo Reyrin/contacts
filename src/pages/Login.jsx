@@ -1,12 +1,17 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
+import { logIn } from "../store/authSlice";
 import { Form } from "../components";
-
 import { validate } from "../utils/validate";
 
-function Login({ isAuth, setIsAuth, users }) {
+function Login() {
+	const dispatch = useDispatch();
+	const {isAuth, users} = useSelector((state) => state.auth);
+
 	function login(email, pass) {
 		if (validate(email, pass)) {
 			let result = "User not found";
@@ -15,14 +20,14 @@ function Login({ isAuth, setIsAuth, users }) {
 				if (email === obj.email) {
 					if (pass === obj.pass) {
 						result = "Login completed!";
-						setIsAuth(obj.email.split('@')[0]);
+						dispatch(logIn(obj.email.split("@")[0]));
 					} else {
 						result = "Incorrect password!";
 					}
 				}
 			});
 
-			alert(result);
+			toast(result);
 		}
 	}
 
@@ -34,7 +39,7 @@ function Login({ isAuth, setIsAuth, users }) {
 				<div>
 					<Form title="Log In" handleClick={login} />
 					<p>
-						Or <Link to="/registration">register</Link>
+						Or <Link to="/register">register</Link>
 					</p>
 				</div>
 			)}
