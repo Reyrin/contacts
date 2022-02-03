@@ -3,6 +3,7 @@ body {
 		Arial, Noto Sans, Liberation Sans, sans-serif;
 	background-color: #efefef;
 	padding-top: 200px;
+    padding-bottom: 20px;
 }
 
 *,
@@ -18,12 +19,12 @@ body {
 }
 
 h1 {
-    font-size: 50px;
+	font-size: 50px;
 }
 
 .empty {
-    text-align: center;
-    font-size: 50px;
+	text-align: center;
+	font-size: 50px;
 }
 
 a {
@@ -62,226 +63,306 @@ a {
 		text-decoration: none;
 		transition: 0.3s ease-in-out;
 
-        &:hover {
-            background-color: #00CA9A;
-        }
+		&:hover {
+			background-color: #00ca9a;
+		}
 	}
 }
 
 .add-btn {
-    margin: 20px auto;
-    text-align: center;
-    width: 150px;
-    display: block;
-    padding: 10px;
-    font-weight: bold;
-    background-color: #00CA9A;
-    border-radius: 3px;
-    color: #fff;
-    text-decoration: none;
-    transition: 0.2s ease-in-out;
+	margin: 20px auto;
+	text-align: center;
+	width: 150px;
+	display: block;
+	padding: 10px;
+	font-weight: bold;
+	background-color: #00ca9a;
+	border-radius: 3px;
+	color: #fff;
+	text-decoration: none;
+	transition: 0.2s ease-in-out;
 
-    &:hover {
-        background-color: #00bf91;
-    }
+	&:hover {
+		background-color: #00bf91;
+	}
 
-    &:active {
-        transform: translateY(4px);
-    }
+	&:active {
+		transform: translateY(4px);
+	}
 }
 
 .rest-btn {
-    display: block;
-    cursor: pointer;
-    margin-left: auto;
-    border: none;
-    background-color: transparent;
-    font-size: 30px;
-    margin-bottom: 10px;
-    transition: transform .2s ease-in-out;
+	display: block;
+	cursor: pointer;
+	margin-left: auto;
+	border: none;
+	background-color: transparent;
+	font-size: 30px;
+	margin-bottom: 10px;
+	transition: transform 0.2s ease-in-out;
 
-    &:hover {
-        transform: translateY(-3px);
-    }
+	&:hover {
+		transform: translateY(-3px);
+	}
 }
 
 .user {
 	font-size: 20px;
 	color: #fff;
 
-    span {
-        color: #2eff35;
-    }
+	span {
+		color: #2eff35;
+	}
 
 	button {
 		padding: 5px;
 		border: 1px solid #fff;
-        background-color: transparent;
+		background-color: transparent;
 		border-radius: 3px;
 		color: #fff;
 		text-decoration: none;
 		transition: transform 0.3s ease-in-out;
-        cursor: pointer;
+		cursor: pointer;
 
-        &:hover {
-            background-color: #00bf91;
-        }
+		&:hover {
+			background-color: #00bf91;
+		}
 
-        &:active {
-            transform: translateY(4px);
-        }
+		&:active {
+			transform: translateY(4px);
+		}
 	}
 }
 
 .login,
 .signup {
-    text-align: center;
+	text-align: center;
 
-    a {
-        color: #000;
-        transition: .3s ease-in-out;
+	a {
+		color: #000;
+		transition: 0.3s ease-in-out;
 
-        &:hover {
-            color: #00CA9A;
-        }
-    }
+		&:hover {
+			color: #00ca9a;
+		}
+	}
 }
 
 .form,
 .form-contact {
-    margin: 0 auto;
+	margin: 0 auto;
 	width: 500px;
 	padding: 30px;
 
 	display: flex;
 	flex-direction: column;
-    
-    background-color: #fff;
-    border-radius: 5px;
 
-    input {
-        padding: 12px;
-	    margin-bottom: 35px;
-    }
+	background-color: #fff;
+	border-radius: 5px;
 
-    button {
-        margin: 15px auto;
-        padding: 10px;
-        width: 130px;
+	input {
+		padding: 12px;
+		margin-bottom: 35px;
+	}
 
-        font-size: 18px;
-        background-color: #00CA9A;
-        border-radius: 5px;
-        border: none;
-        cursor: pointer;
-        transition: .3s ease-in-out;
+	button {
+		margin: 15px auto;
+		padding: 10px;
+		width: 130px;
 
-        &:hover {
-            background-color: #00bf91;
-        }
+		font-size: 18px;
+		background-color: #00ca9a;
+		border-radius: 5px;
+		border: none;
+		cursor: pointer;
+		transition: 0.3s ease-in-out;
 
-        &:active {
-            transform: translateY(4px);
-        }
-    }
+		&:hover {
+			background-color: #00bf91;
+		}
+
+		&:active {
+			transform: translateY(4px);
+		}
+	}
 }
 
 .form-contact {
-    &__btn {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+	&__btn {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 
-    &__cancel {
-        background-color: #F4B300 !important;
-    }
+	&__cancel {
+		background-color: #f4b300 !important;
+	}
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+	-webkit-appearance: none;
 }
-input[type='number'] {
-    -moz-appearance: textfield;
+input[type="number"] {
+	-moz-appearance: textfield;
 }
 
 .header-contacts {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
 
-    background-color: #303030;
-    text-transform: uppercase;
-    color: #fff;
+	background-color: #303030;
+	text-transform: uppercase;
+	color: #fff;
 
-    &__id {
-        width: 10%;
-        padding: 10px;
-        border-right: 1px solid #fff;
-    }
+	&__id {
+		width: 10%;
+		padding: 10px;
+		border-right: 1px solid #fff;
+	}
 
-    &__name,
-    &__phone,
-    &__actions {
-        width: 30%;
-        padding: 10px;
-        border-right: 1px solid #fff;
-    }
+	&__name,
+	&__phone,
+	&__actions {
+		width: 30%;
+		padding: 10px;
+		border-right: 1px solid #fff;
+	}
 
-    &__actions {
-        border-right: none;
+	&__actions {
+		border-right: none;
+	}
+}
+
+.contact {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+
+	background-color: #fff;
+	border-bottom: 1px solid #303030;
+
+	&__id {
+		width: 10%;
+		border-right: 1px solid #303030;
+	}
+
+	&__name,
+	&__phone {
+		width: 30%;
+		border-right: 1px solid #303030;
+	}
+
+	&__btns {
+		width: 30%;
+		display: flex;
+		justify-content: space-around;
+	}
+
+	&__edit,
+	&__delete {
+		padding: 5px;
+		width: 100px;
+		color: #fff;
+		text-decoration: none;
+
+		font-size: 18px;
+		background-color: #00ca9a;
+		border-radius: 5px;
+		border: none;
+		cursor: pointer;
+		transition: 0.3s ease-in-out;
+
+		&:active {
+			transform: translateY(4px);
+		}
+	}
+
+	&__edit {
+		background-color: #f4b300;
+	}
+
+	&__delete {
+		background-color: #fd3e3e;
+	}
+}
+
+@media (max-width: 800px) {
+	.contact {
+		&__btns {
+			flex-direction: column;
+		}
+
+		&__edit,
+		&__delete {
+			margin: 5px auto;
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.main-header {
+		flex-direction: column;
+
+		&__logo {
+			margin-bottom: 15px;
+		}
+	}
+
+	.form,
+	.form-contact {
+		width: 100%;
+	}
+
+	.header-contacts {
+        font-size: 14px;
+
+		&__id {
+			width: 10%;
+            padding: 5px 0;
+		}
+
+		&__name,
+		&__phone {
+			width: 35%;
+            padding: 5px 0;
+		}
+
+		&__actions {
+			width: 20%;
+            padding: 5px 0;
+		}
+	}
+
+    .contact {
+        font-size: 16px;
+
+        &__id {
+            width: 10%;
+        }
+    
+        &__name,
+        &__phone {
+            width: 35%;
+        }
+    
+        &__btns {
+            width: 20%;
+        }
+
+        &__edit,
+		&__delete {
+			width: 50px;
+            font-size: 14px;
+		}
     }
 }
 
-
-.contact {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-
-    background-color: #fff;
-    border-bottom: 1px solid #303030;
-
-    &__id {
-        width: 10%;
-        border-right: 1px solid #303030;
-    }
-
-    &__name,
-    &__phone {
-        width: 30%;
-        border-right: 1px solid #303030;
-    }
-
-    &__edit,
-    &__delete {
-        max-width: 15%;
-        margin: 15px auto;
-        padding: 5px;
-        width: 100px;
-        color: #fff;
-        text-decoration: none;
-
-        font-size: 18px;
-        background-color: #00CA9A;
-        border-radius: 5px;
-        border: none;
-        cursor: pointer;
-        transition: .3s ease-in-out;
-
-        &:active {
-            transform: translateY(4px);
-        }
-    }
-
-    &__edit {
-        background-color: #F4B300;
-    }
-
-    &__delete {
-        background-color: #fd3e3e;
+@media (max-width: 400px) { 
+    .container {
+        padding: 0 5px;
     }
 }
