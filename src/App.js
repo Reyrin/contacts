@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -11,13 +11,10 @@ import "./App.scss";
 
 function App() {
 	const dispatch = useDispatch();
-	const users = useSelector((state) => state.auth.users);
 
 	React.useEffect(() => {
 		dispatch(getUsers());
 	}, []);
-
-	console.log(users);
 
 	return (
 		<div className="App">
