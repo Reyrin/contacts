@@ -2,6 +2,8 @@
 
 ![contacts](https://user-images.githubusercontent.com/51198976/152440669-553bbc27-6568-4a5b-b622-59fc5ba4ed5e.png)
 
+### Demo - https://reyrin-contacts.herokuapp.com/
+
 ## Stack:
 1. React
 2. Redux Toolkit
