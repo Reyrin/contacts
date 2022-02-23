@@ -1,8 +1,8 @@
 import React from "react";
 
 function Form({ title, handleClick }) {
-	const [email, setEmail] = React.useState("");
-	const [pass, setPass] = React.useState("");
+	const [email, setEmail] = React.useState("admin@admin.com");
+	const [pass, setPass] = React.useState("Admin123");
 
 	return (
 		<div className="form">
